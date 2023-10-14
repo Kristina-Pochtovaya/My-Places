@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import { MainNavigation } from './shared/components/Navigation/MainNavigation';
 import { AuthContext } from './shared/context/auth-context';
