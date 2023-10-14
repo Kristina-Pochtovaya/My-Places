@@ -34,7 +34,7 @@ export const UpdatePlace = () => {
     useEffect(() => {
         const sendRequestLocal = async () => {
             try {
-                const responseData = await sendRequest(`http://localhost:5000/api/places/${placeId}`, methodType.GET)
+                const responseData = await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`, methodType.GET)
                 setIdentifiedPlace(responseData?.place);
 
 
@@ -60,7 +60,7 @@ export const UpdatePlace = () => {
         event.preventDefault();
 
         try {
-            await sendRequest(`http://localhost:5000/api/places/${placeId}`, methodType.PATCH, {
+            await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`, methodType.PATCH, {
                 title: formState.inputs.title.value,
                 description: formState.inputs.description.value,
             },{ Authorization: 'Bearer ' + auth.token })

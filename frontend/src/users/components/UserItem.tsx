@@ -14,7 +14,7 @@ export const UserItem = ({ id, name, image, placeCount }: Omit<User, 'places'> &
             <Card className='user-item__content'>
                 <Link to={`/${id}/places`}>
                     <div className='user-item__image'>
-                        <Avatar src={`http://localhost:5000/${image}`} alt={name}/>
+                        <Avatar src={`${process.env.REACT_APP_ASSET_URL}/${image}`} alt={name}/>
                     </div>
                     <div className='user-item__info'>
                     <h2>{name}</h2>

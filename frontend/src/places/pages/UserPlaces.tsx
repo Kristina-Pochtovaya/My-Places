@@ -14,7 +14,7 @@ export const UserPlaces = () => {
     useEffect(() => {
         const sendRequestLocal = async ()=>  {
             try {
-                const responseData =  await sendRequest(`http://localhost:5000/api/places/user/${userId}`, methodType.GET)
+                const responseData =  await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places/user/${userId}`, methodType.GET)
                 setLoadedUserPlaces(responseData?.places || []);
             } catch (error) {
                 console.log(error);

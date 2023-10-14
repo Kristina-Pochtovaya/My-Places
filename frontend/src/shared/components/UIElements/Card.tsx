@@ -3,12 +3,12 @@ import './Card.scss';
 
 export type PropsWithChildren<P> = P & { children?: ReactNode };
 
-export type Card = {
+export type CardProps = {
   style?: unknown;
   className?: string;
 };
 
-export const Card  = (props: PropsWithChildren<Card>)  => {
+export const Card  = (props: PropsWithChildren<CardProps>)  => {
   return (
     <div className={`card ${props.className}`} style={props.style}>
       {props.children}

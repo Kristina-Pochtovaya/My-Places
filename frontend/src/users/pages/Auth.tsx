@@ -39,7 +39,7 @@ export const Auth = () => {
 
         if (isLoginMode) {
             try {
-                const responseData = await sendRequest('http://localhost:5000/api/users/login', methodType.POST, {
+                const responseData = await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/users/login`, methodType.POST, {
                     email: formState.inputs.email.value,
                     password: formState.inputs.password.value,
                 })
@@ -56,7 +56,7 @@ export const Auth = () => {
                 formData.append('name', formState.inputs.name.value);
                 formData.append('password', formState.inputs.password.value);
                 formData.append('image', formState.inputs.image.value);
-                const responseData = await sendRequest('http://localhost:5000/api/users/signup', methodType.POST, formData)
+                const responseData = await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/users/signup`, methodType.POST, formData)
 
                 auth.login(responseData.userId, responseData.token);
             } catch (error) {

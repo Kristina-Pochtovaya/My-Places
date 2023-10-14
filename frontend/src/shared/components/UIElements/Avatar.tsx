@@ -1,7 +1,7 @@
 import React from 'react';
 import './Avatar.scss';
 
-export type Avatar = {
+export type AvatarProps = {
     src: string
     alt: string
     width?: number
@@ -10,7 +10,7 @@ export type Avatar = {
     className?: string;
 };
 
-export const Avatar = (props: Avatar) => {
+export const Avatar = (props: AvatarProps) => {
   return (
     <div className={`avatar ${props.className}`} style={props.style}>
       <img
